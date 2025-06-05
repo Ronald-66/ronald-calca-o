@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor</title>
+</head>
+<body>
+    <h2>Bienvenido, {{ username }}</h2>
+    <form method="post">
+        <input type="number" step="any" name="value" placeholder="Valor" required>
+        <select name="unit">
+            <option value="km_to_miles">Kilómetros a Millas</option>
+            <option value="miles_to_km">Millas a Kilómetros</option>
+        </select>
+        <button type="submit">Convertir</button>
+    </form>
+    {% if result is not none %}
+        <p>Resultado: {{ result }}</p>
+    {% endif %}
+    <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+</body>
+</html>
